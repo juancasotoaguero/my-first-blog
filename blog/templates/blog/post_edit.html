@@ -1,0 +1,20 @@
+ {% extends 'blog/base.html' %}
+
+    {% block content %}
+        <h1>Nuevo Post</h1>
+        <hr>
+        <form method="POST" class="post-form">{% csrf_token %}
+        <div class="row control-group">
+            	{% for field in form %}
+   					
+    					<h3>{{ field.label }}</h3>
+    					<br>
+
+	    				{{ field }}
+    
+    			{% endfor %}
+				<hr>
+            	<button type="submit" class="save btn btn-default">Guardar</button>
+        	</div>
+        </form>
+    {% endblock %}
