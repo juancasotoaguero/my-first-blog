@@ -1,25 +1,16 @@
-{% extends 'blog/base.html'%} 
-
-{% block content%}
-
+{% extends 'blog/base.html'%} {% block content%}
 <article>
+	<div class="row">
+		<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
 
-		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-			
 			{% if post.published_date %}
-                <div class="meta">
-                    {{ post.published_date }}
-                </div>
-            {% endif %}
-            <div class="post-heading">
-           	 	<h1>{{ post.title }}</h1>
-            	<p class="subheading">{{ post.text|linebreaks }}</p>
-			</div>	
+			<div class="meta">{{ post.published_date }}</div>
+			{% endif %}
+			<div class="post-heading">
+				<h1>{{ post.title }}</h1>
+				<p class="subheading">{{ post.text|linebreaks }}</p>
 			</div>
 		</div>
-
+	</div>
 </article>
-
-
 {% endblock content%}

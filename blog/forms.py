@@ -11,3 +11,10 @@ class PostForm(forms.ModelForm):
             'title': _('Titulo'),
             'text': _('Contenido'),
                   } 
+
+class Contact_form(forms.Form):
+    asunto = forms.CharField(max_length=100)
+    mensaje = forms.CharField(widget=forms.Textarea)
+    emisor = forms.EmailField()
+    cc = forms.BooleanField(required = False)
+    

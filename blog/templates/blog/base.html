@@ -55,10 +55,10 @@
                         <a href="index.html">Home</a>
                     </li>-->
                     <li>
-                        <a href="about.html">Más acerca del Club</a>
+                        <a href="{% url 'blog.views.about_us'%}">Más acerca del Club</a>
                     </li>
                     <li>
-                        <a href="contact.html">Contacto</a>
+                        <a href="{% url 'blog.views.contact_form'%}">Contacto</a>
                     </li>
                 </ul>
             </div>
@@ -66,7 +66,7 @@
         </div>
         <!-- /.container -->
     </nav>
-
+	
     <!-- Page Header -->
     <!-- Set your background image for this header on the line below. -->
     <header class="intro-header" style="background-image: url({% static 'img/Moto-Logo-720.png' %});">
@@ -126,7 +126,7 @@
                             </a>
                         </li>
                     </ul>
-                    <p class="copyright text-muted">Copyright &copy; Your Website 2014</p>
+                    <p class="copyright text-muted">Copyright &copy; JCSA2016</p>
                 </div>
             </div>
         </div>

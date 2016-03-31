@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+<form method="POST" class="post-form">
+<!--{{ form.as_p }} -->
+{% csrf_token %}
+<!-- {{ form.non_field_errors }}
+	<div class="fieldWrapper">
+	    {{ form.asunto.errors }}
+	    <label for="{{ form.asunto.id_for_label }}">Asunto</label> 
+	    {{ form.asunto }}
+	</div>
+	<div class="fieldWrapper">
+	    {{ form.mensaje.errors }}
+	    <label for="{{ form.mensaje.id_for_label }}">Mensaje</label>
+	    {{ form.mensaje }}
+	</div>
+	<div class="fieldWrapper">
+	    {{ form.emisor.errors }}
+	    <label for="{{ form.emisor.id_for_label }}">Email</label>
+	    {{ form.emisor }}
+	</div>
+	<div class="fieldWrapper">
+	    {{ form.cc.errors }}
+	    <label for="{{ form.cc.id_for_label }}">CC</label>
+	    {{ form.cc}}
+	</div> 
+	<hr> -->
+		{{ form.as_p }}
+		<button type="submit" class="save btn btn-default">Enviar</button>
+</form>
+
+{% endblock content %}

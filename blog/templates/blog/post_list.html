@@ -1,28 +1,29 @@
-{% extends 'blog/base.html' %}
+{% extends 'blog/base.html' %} {% block content %}
+<!-- Pager -->
+<ul class="pager">
+	<li><a href="{% url 'blog.views.post_new' %}" class="top-menu"><span
+			class="glyphicon glyphicon-plus"></span>Nuevo Post</a></li>
+	<hr>
+</ul>
+{% for post in posts %}
 
-{% block content %}
-	<!-- Pager -->
-	<ul class="pager">
-		<li><a href="{% url 'blog.views.post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span>Nuevo Post</a></li>
-		<hr>
-	</ul>
-	{% for post in posts %}
-
-	<div class="post-preview">
-		<a href="{% url 'blog.views.post_detail' pk=post.pk %}">
-			<h2 class="post-title">{{ post.title }}</h2> <!--<h3 class="post-subtitle">
+<div class="post-preview">
+	<a href="{% url 'blog.views.post_detail' pk=post.pk %}">
+		<h2 class="post-title">{{ post.title }}</h2> <!--<h3 class="post-subtitle">
 		                            Problems look mighty small from 150 miles up
 		                        </h3>-->
-		</a>
-		<p class="post-meta">
-			Posteado por <a href="#">{{ post.author }}</a> el {{post.published_date }}
-		</p>
-	</div>
-	<hr>
-	{% endfor %}
-	<hr>
-	<!-- Pager -->
-	<ul class="pager">
-		<li class="next"><a href="#">Posts anteriores &rarr;</a></li>
-	</ul>
+	</a>
+	<p class="post-meta">
+		Posteado por <a href="#">{{ post.author }}</a> el
+		{{post.published_date }}
+	</p>
+</div>
+<hr>
+{% endfor %}
+<hr>
+<!-- Pager -->
+<ul class="pager">
+	<li class="next"><a href="#">Posts anteriores &rarr;</a></li>
+</ul>
+
 {% endblock content%}
